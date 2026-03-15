@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+		<title>Vortex | Proxy</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<script src="scram/scramjet.all.js"></script>
+		<script src="baremux/index.js"></script>
+		<link rel="stylesheet" href="index.css" />
+		<script src="register-sw.js" defer></script>
+		<script src="search.js" defer></script>
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo-section">
+				<div class="logo-row">
+					<div class="logo-orb"></div>
+					<span class="logo-text">VORTEX</span>
+				</div>
+				<div class="logo-sub">Private Browser</div>
+			</div>
+
+			<form id="sj-form" class="search-form">
+				<input id="sj-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+				<div class="search-bar">
+					<i class="fa-solid fa-search" style="color:#4fc3f7; flex-shrink:0;"></i>
+					<input id="sj-address" type="text" placeholder="Search or enter a URL..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+					<select id="sj-engine">
+						<option value="https://www.google.com/search?q=%s">Google</option>
+						<option value="https://search.brave.com/search?q=%s">Brave</option>
+						<option value="https://yandex.com/search/?text=%s">Yandex</option>
+						<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
+					</select>
+					<button type="submit">GO</button>
+				</div>
+			</form>
+
+			<p id="sj-error"></p>
+			<pre id="sj-error-code"></pre>
+
+			<div class="proxy-row">
+				<span class="proxy-label"><i class="fa-solid fa-server"></i> Proxy Server:</span>
+				<select id="sj-wisp-select" onchange="switchWisp()">
+					<option value="wss://anura.pro/wisp/">Anura (Default)</option>
+					<option value="wss://wisp.mercurywork.shop/wisp/">Mercury Workshop</option>
+					<option value="wss://wisp.vern.cc/wisp/">Vern</option>
+				</select>
+				<span id="sj-wisp-status" class="proxy-status"></span>
+			</div>
+
+			<div class="shortcuts">
+				<a class="shortcut" href="#" data-url="https://google.com">
+					<div class="shortcut-icon">🌐</div>
+					<span>Google</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://youtube.com">
+					<div class="shortcut-icon">▶️</div>
+					<span>YouTube</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://discord.com/app">
+					<div class="shortcut-icon">💬</div>
+					<span>Discord</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://reddit.com">
+					<div class="shortcut-icon">🤖</div>
+					<span>Reddit</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://github.com">
+					<div class="shortcut-icon">🐙</div>
+					<span>GitHub</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://twitch.tv">
+					<div class="shortcut-icon">🎮</div>
+					<span>Twitch</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://wikipedia.org">
+					<div class="shortcut-icon">📖</div>
+					<span>Wikipedia</span>
+				</a>
+				<a class="shortcut" href="#" data-url="https://open.spotify.com">
+					<div class="shortcut-icon">🎵</div>
+					<span>Spotify</span>
+				</a>
+			</div>
+		</div>
+
+		<footer>2025 Vortex &nbsp;·&nbsp; Private Browser</footer>
+	</body>
+</html>
