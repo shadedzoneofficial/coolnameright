@@ -1,4 +1,4 @@
-importScripts("https://cdn.jsdelivr.net/gh/MercuryWorkshop/scramjet@main/dist/scramjet.all.js");
+importScripts("https://cdn.jsdelivr.net/npm/@mercuryworkshop/scramjet@1.0.2/dist/scramjet.all.js");
 
 const { ScramjetServiceWorker } = $scramjetLoadWorker();
 const scramjet = new ScramjetServiceWorker();
