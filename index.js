@@ -38,9 +38,9 @@ async function init() {
 		scramjet = new ScramjetController({
 			wisp: WISP_URL,
 			files: {
-    wasm: "https://cdn.jsdelivr.net/gh/MercuryWorkshop/scramjet@main/dist/scramjet.wasm.wasm",
-    all: "https://cdn.jsdelivr.net/gh/MercuryWorkshop/scramjet@main/dist/scramjet.all.js",
-    sync: "https://cdn.jsdelivr.net/gh/MercuryWorkshop/scramjet@main/dist/scramjet.sync.js",
+    wasm: "https://cdn.jsdelivr.net/npm/@mercuryworkshop/scramjet@1.0.2/dist/scramjet.wasm.wasm",
+    all: "https://cdn.jsdelivr.net/npm/@mercuryworkshop/scramjet@1.0.2/dist/scramjet.all.js",
+    sync: "https://cdn.jsdelivr.net/npm/@mercuryworkshop/scramjet@1.0.2/dist/scramjet.sync.js",
 },
 		});
 		scramjet.init();
