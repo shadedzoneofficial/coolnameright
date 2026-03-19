@@ -45,7 +45,7 @@ async function init() {
 		}
 		try {
 			error.textContent = "Setting up...";
-			
+		await waitForController();	
 		} catch (err) {
 			error.textContent = "SW error: " + err.toString();
 			return;
