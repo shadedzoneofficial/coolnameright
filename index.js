@@ -18,7 +18,7 @@ async function init() {
 	try {
 		scramjet = new ScramjetController({
     wisp: WISP_URL,
-    prefix: "/coolnameright/scram/",
+    prefix: "/coolnameright/scramjet/",
     files: {
         wasm: "https://closet1.great-site.net/scram/scramjet.wasm.wasm",
         all: "https://closet1.great-site.net/scram/scramjet.all.js",
