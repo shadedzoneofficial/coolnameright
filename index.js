@@ -30,27 +30,30 @@ async function init() {
 				sync: "https://closet1.great-site.net/scram/scramjet.sync.js",
 			},
 		});
-		scramjet.init();
 	} catch (err) {
 		error.textContent = "Startup error: " + err.toString();
 		return;
 	}
 
 	async function navigate(url) {
-		error.textContent = "";
-		if (location.protocol !== "https:") {
-			error.textContent = "ERROR: Must use https://";
-			return;
-		}
-		await waitForController();
-		}
-		try {
-			error.textContent = "Loading...";
-			window.location.href = scramjet.encodeUrl(url);
-		} catch (err) {
-			error.textContent = "Error: " + err.toString();
-		}
-	}
+    error.textContent = "";
+    if (location.protocol !== "https:") {
+        error.textContent = "ERROR: Must use https://";
+        return;
+    }
+    if (!navigator.serviceWorker.controller) {
+        await new Promise(resolve => {
+            navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+        });
+    }
+    scramjet.init();
+    try {
+        error.textContent = "Loading...";
+        window.location.href = scramjet.encodeUrl(url);
+    } catch (err) {
+        error.textContent = "Error: " + err.toString();
+    }
+}
 
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
