@@ -43,12 +43,7 @@ async function init() {
 			error.textContent = "ERROR: Must use https://";
 			return;
 		}
-		try {
-			error.textContent = "Setting up...";
-		await waitForController();	
-		} catch (err) {
-			error.textContent = "SW error: " + err.toString();
-			return;
+		await waitForController();
 		}
 		try {
 			error.textContent = "Loading...";
