@@ -1,7 +1,7 @@
 importScripts("https://closet1.great-site.net/scram/scramjet.all.js");
 
 const scramjet = new ScramjetServiceWorker({
-    prefix: "/coolnameright/scram/",
+    prefix: "/coolnameright/scramjet/",
 });
 
 function broadcastError(stage, err) {
