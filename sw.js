@@ -54,6 +54,12 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+	if (event.request.url.includes("closet1.great-site.net") || 
+	    event.request.url.includes("scramjet.all.js") ||
+	    event.request.url.includes("scramjet.wasm") ||
+	    event.request.url.includes("scramjet.sync")) {
+		return;
+	}
 	event.respondWith(handleRequest(event));
 });
 
