@@ -45,13 +45,7 @@ async function init() {
 		}
 		try {
 			error.textContent = "Setting up...";
-			const reg = await navigator.serviceWorker.register("/coolnameright/sw.js", { scope: "/coolnameright/" });
-			if (!navigator.serviceWorker.controller) {
-				error.textContent = "Installing... page will reload, then try again.";
-				const sw = reg.installing || reg.waiting;
-				if (sw) sw.addEventListener("statechange", () => { if (sw.state === "activated") window.location.reload(); });
-				await waitForController();
-			}
+			
 		} catch (err) {
 			error.textContent = "SW error: " + err.toString();
 			return;
