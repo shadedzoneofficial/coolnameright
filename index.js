@@ -16,7 +16,8 @@ async function init() {
 	}
 
 	try {
-		scramjet = new ScramjetController({
+		const { ScramjetController } = $scramjetLoadController();
+scramjet = new ScramjetController({
     wisp: WISP_URL,
     prefix: "/coolnameright/scramjet/",
     files: {
