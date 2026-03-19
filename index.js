@@ -45,7 +45,7 @@ async function init() {
 		}
 		try {
 			error.textContent = "Setting up...";
-			const reg = await navigator.serviceWorker.register("/sw.js", { scope: "/" });
+			const reg = await navigator.serviceWorker.register("./sw.js", { scope: "/coolnameright/" });;
 			if (!navigator.serviceWorker.controller) {
 				error.textContent = "Installing... page will reload, then try again.";
 				const sw = reg.installing || reg.waiting;
