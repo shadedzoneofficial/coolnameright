@@ -7,11 +7,10 @@ const errorCode = document.getElementById("sj-error-code");
 
 const WISP_URL = "wss://anura.pro/wisp/";
 
-async function waitForController() {
-	if (navigator.serviceWorker.controller) return;
-	return new Promise(resolve => {
-		navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
-	});
+if (!navigator.serviceWorker.controller) {
+    await new Promise(resolve => {
+        navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+    });
 }
 
 async function init() {
