@@ -10,7 +10,10 @@ const WISP_URL = "wss://anura.pro/wisp/";
 async function waitForController() {
 	if (navigator.serviceWorker.controller) return;
 	return new Promise(resolve => {
-		navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+		navigator.serviceWorker.addEventListener("controllerchange", () => {
+			window.location.reload();
+			resolve();
+		}, { once: true });
 	});
 }
 
