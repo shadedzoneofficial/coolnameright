@@ -16,15 +16,15 @@ async function init() {
 	}
 
 	try {
-		const { ScramjetController } = $scramjetLoadController();
 		scramjet = new ScramjetController({
-			wisp: WISP_URL,
-			files: {
-				wasm: "https://closet1.great-site.net/scram/scramjet.wasm.wasm",
-				all: "https://closet1.great-site.net/scram/scramjet.all.js",
-				sync: "https://closet1.great-site.net/scram/scramjet.sync.js",
-			},
-		});
+    wisp: WISP_URL,
+    prefix: "/coolnameright/scram/",
+    files: {
+        wasm: "https://closet1.great-site.net/scram/scramjet.wasm.wasm",
+        all: "https://closet1.great-site.net/scram/scramjet.all.js",
+        sync: "https://closet1.great-site.net/scram/scramjet.sync.js",
+    },
+});
 	} catch (err) {
 		error.textContent = "Startup error: " + err.toString();
 		return;
