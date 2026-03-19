@@ -1,7 +1,8 @@
 importScripts("https://closet1.great-site.net/scram/scramjet.all.js");
 
-const { ScramjetServiceWorker } = $scramjetLoadWorker();
-const scramjet = new ScramjetServiceWorker();
+const scramjet = new ScramjetServiceWorker({
+    prefix: "/coolnameright/scram/",
+});
 
 function broadcastError(stage, err) {
 	self.clients.matchAll().then(clients => {
